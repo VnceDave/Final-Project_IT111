@@ -633,7 +633,7 @@ html {
     .bio-image{
         display: flex;
         flex-wrap: wrap;
-        flex-direction: wrap;
+        flex-direction: column;
     }
 
     .SupportforHumanLivelihoods{
