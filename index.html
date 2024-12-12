@@ -10,16 +10,16 @@
  
 </head>
 <body>
-    <header>
-        <!-- <a href="#" class="logo">Life Under the Sea</a> -->
+    <header class="main-header">
         <nav>
-            <a href="#home.html" class="active">Home</a>
+            <a href="#home" class="active">Home</a>
             <a href="about.html">About</a>
             <a href="explore.html">Explore</a>
             <a href="news.html">News</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
+
     <section class="slider-container">
         <div class="scroll-container">
             <section id="home" class="slides home">
@@ -29,15 +29,14 @@
                     <p>Life below water is vital for regulating climate, producing oxygen, and supporting biodiversity. Oceans provide food, medicine, and livelihoods while protecting coastal communities from storms. However, pollution, overfishing, and climate change threaten these ecosystems, making their preservation crucial for the planet's health and human survival.</p>
                 </div>
                 <div class="images">
-        
-                    <a href="#Slide1">
-                        <img src="asset/biodiversity.jpg" alt="biodiversity" width="292">
+                    <a href="#Slide1" class="slide-link">
+                        <img src="asset/biodiversity.jpg" alt="biodiversity">
                     </a>
-                    <a href="#Slide2">
-                        <img src="asset/mainbg.jpg" alt="Support of human livelihoods" width="262">
+                    <a href="#Slide2" class="slide-link">
+                        <img src="asset/mainbg.jpg" alt="Support of human livelihoods">
                     </a>
-                    <a href="#Slide3">
-                        <img src="asset/Climate Regulaton.jpg" alt="Climate regulation" width="248">
+                    <a href="#Slide3" class="slide-link">
+                        <img src="asset/Climate Regulaton.jpg" alt="Climate regulation">
                     </a>
                 </div>
             </section>
@@ -107,6 +106,106 @@
                     </div>
                 </section>
             </section>
+
+            <!-- About Section -->
+            <section id="about" class="Slides about-section">
+                <h2>ABOUT US</h2>
+                <div class="about-content">
+                    <div class="about-card">
+                        <h3>Our Mission</h3>
+                        <p>We are dedicated to raising awareness about marine conservation and promoting sustainable practices to protect our oceans and marine life for future generations.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Our Vision</h3>
+                        <p>To create a world where marine ecosystems thrive in harmony with human activities, ensuring the preservation of ocean biodiversity and resources.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Our Goals</h3>
+                        <p>To educate, inspire, and empower communities to take action in protecting marine environments through research, conservation, and sustainable practices.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Explore Section -->
+            <section id="explore" class="Slides explore-section">
+                <h2>EXPLORE</h2>
+                <div class="explore-grid">
+                    <div class="explore-card">
+                        <img src="asset/coral-reef.jpg" alt="Coral Reef">
+                        <h3>Coral Reefs</h3>
+                        <p>Discover the vibrant ecosystems of coral reefs and learn about their importance to marine life.</p>
+                    </div>
+                    <div class="explore-card">
+                        <img src="asset/deep-sea.jpg" alt="Deep Sea">
+                        <h3>Deep Sea</h3>
+                        <p>Venture into the mysterious depths of our oceans and explore unique deep-sea creatures.</p>
+                    </div>
+                    <div class="explore-card">
+                        <img src="asset/marine-conservation.jpg" alt="Conservation">
+                        <h3>Conservation Projects</h3>
+                        <p>Learn about ongoing marine conservation efforts and how you can contribute.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- News Section -->
+            <section id="news" class="Slides news-section">
+                <h2>LATEST NEWS</h2>
+                <div class="news-container">
+                    <article class="news-card">
+                        <img src="asset/news1.jpg" alt="Ocean Clean-up">
+                        <div class="news-content">
+                            <h3>Global Ocean Clean-up Initiative</h3>
+                            <p class="date">March 15, 2024</p>
+                            <p>New technological innovations are helping to remove plastic waste from our oceans more efficiently than ever before.</p>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="asset/news2.jpg" alt="Marine Species">
+                        <div class="news-content">
+                            <h3>New Marine Species Discovered</h3>
+                            <p class="date">March 10, 2024</p>
+                            <p>Scientists have discovered previously unknown deep-sea creatures in the Pacific Ocean.</p>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <img src="asset/news3.jpg" alt="Conservation Success">
+                        <div class="news-content">
+                            <h3>Conservation Success Story</h3>
+                            <p class="date">March 5, 2024</p>
+                            <p>Local community efforts lead to successful restoration of coral reef ecosystems.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <footer class="contact-section">
+                <h2>CONTACT US</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>info@marineconservation.org</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-location-dot"></i>
+                            <p>123 Ocean Avenue, Marine City, MC 12345</p>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </footer>
         </div>
     </section>
 </body>

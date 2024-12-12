@@ -18,6 +18,7 @@ body {
     margin: 0;
     position: relative;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 nav{
@@ -28,9 +29,13 @@ nav{
     background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
+    height: 60px;
+    box-sizing: border-box;
 }
 
 .life{
@@ -46,6 +51,7 @@ nav a {
     padding: 8px 15px;
     border-radius: 4px;
     transition: all 0.3s ease;
+    scroll-behavior: smooth;
 }
 
 nav a:hover {
@@ -81,23 +87,33 @@ nav a:hover {
 }
 
 .images {
-  display: flex; /* Align images in a row */
-  gap: 20px; /* Adds space between images */
-  justify-content: center; /* Optional: Centers the images within the container */
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
 }
 
-.images img {
-  border: 1px solid #ccc; /* Optional: Add a border for better separation */
-  border-radius: 5px; /* Optional: Rounds the corners */
-  padding: 5px; /* Optional: Adds internal spacing */
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
-  cursor: pointer;
+.slide-link {
+    width: 280px;
+    height: 200px;
+    overflow: hidden;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
 }
 
-.images img:hover {
-  transform: scale(1.1); /* Image grows 10% larger */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Adds shadow effect */
-  border-color: #fff; /* Changes border color on hover */
+.slide-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.slide-link:hover img {
+    transform: scale(1.1);
 }
 
 /* Animation */
@@ -113,36 +129,36 @@ nav a:hover {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    padding-top: 60px; /* Height of the header */
 }
 
 .scroll-container {
-    height: 100%;
-    overflow-y: scroll;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
     scroll-snap-type: y mandatory;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
 }
 
-.scroll-container::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
-}
-
-/* Make each slide snap */
 .slides {
     scroll-snap-align: start;
-    height: 100vh;
+    min-height: calc(100vh - 60px);
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .Slides {
+    scroll-snap-align: start;
+    min-height: calc(100vh - 60px);
     width: 100%;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
-    color: #fff;
-    scroll-snap-align: start;
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
 .Slide1 {
@@ -151,7 +167,13 @@ nav a:hover {
 }
 
 .Slide2 {
-    background: linear-gradient(45deg, #1a234d, #1883a1);
+    background: linear-gradient(
+        to top,
+        transparent,
+        #1a234d 30%,
+        #1a234d 70%,
+        #1883a1
+    );
     flex-wrap: wrap;
 }
 
@@ -342,4 +364,184 @@ nav a:hover {
     line-height: 1.6;
     font-size: 1rem;
     margin: 0;
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures header stays above other content */
+    background: rgba(0, 0, 0, 0.7); /* Optional: adds a semi-transparent background */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* About Section */
+.about-section {
+    background: linear-gradient(45deg, #2193b0, #6dd5ed);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Explore Section */
+.explore-section {
+    background: linear-gradient(45deg, #1a2a6c, #b21f1f);
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.explore-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.explore-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.explore-card h3, .explore-card p {
+    padding: 1rem;
+    color: white;
+}
+
+/* News Section */
+.news-section {
+    background: linear-gradient(45deg, #134e5e, #71b280);
+}
+
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.news-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 1.5rem;
+}
+
+.date {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+/* Contact Section */
+.contact-section {
+    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    color: white;
+}
+
+.info-item i {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.contact-form button {
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: rgba(255, 255, 255, 0.3);
 }
