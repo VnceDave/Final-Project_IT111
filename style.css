@@ -630,6 +630,11 @@ html {
         flex-wrap: wrap;
     }
 
+    .bio-image{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     .SupportforHumanLivelihoods{
         display: flex;
         flex-direction: column;
